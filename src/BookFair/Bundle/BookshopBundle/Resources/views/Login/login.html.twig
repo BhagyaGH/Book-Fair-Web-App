@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Login</title>
+
+        <link href="{{asset('bundles/bookfairbookshop/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/bookfairbookshop/css/signin.css')}}" rel="stylesheet">
+        <script src="{{asset('bundles/bookfairbookshop/js/ie-emulation-modes-warning.js')}}"></script>
+        <script src="{{asset('bundles/bookfairbookshop/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <form class="form-signin" role="form" action="{{path('book_fair_login_validation')}}" method="POST">
+                <h2 class="form-signin-heading">Sign in</h2>
+
+                <input type="radio" name="acc_type" value="admin" required>Administrator<br>
+                <input type="radio" name="acc_type" value="bookshop" required>Bookshop Management<br><br>
+
+                Username <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+                Password <input type="password" name="password" class="form-control" placeholder="Password" required>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+
+            <form class="form-signin" role="form" action="{{path('book_fair_register_key')}}" method="POST">
+                <br><br>
+                Not a member? Register with your validation key.
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            </form>
+
+        </div> 
+    </body>
+</html>

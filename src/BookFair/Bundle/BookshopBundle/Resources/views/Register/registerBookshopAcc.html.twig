@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Register</title>
+
+        <link href="{{asset('bundles/bookfairbookshop/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/bookfairbookshop/css/signin.css')}}" rel="stylesheet">
+        <script src="{{asset('bundles/bookfairbookshop/js/ie-emulation-modes-warning.js')}}"></script>
+        <script src="{{asset('bundles/bookfairbookshop/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <form class="form-signin" role="form" action="{{path('book_fair_register_bookshopacc')}}" method="POST">
+                <h2>Register as Bookshop Manager</h2>
+                <br>
+
+                <input type="hidden" name="vkey" value="{{vkey}}" class="form-control">
+                    
+                Bookshop Name:
+                <select name="bookshop" class="form-control" required autofocus>
+                    {% for b in bookshopNames %}
+                        <option value="{{b}}">{{b}}</option>
+                        <br>
+                    {% endfor %}
+                </select>
+                <br>
+                E-mail:
+                <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
+                Username:
+                <input type="text" id="user" name="username" class="form-control" placeholder="Username" required autofocus onblur="confirmPass()">
+                Password:
+                <input type="password" id="pass" name="password" class="form-control" placeholder="Password" required>
+                Retype the password:
+                <input type="password" id="c_pass" name="password" class="form-control" placeholder="Password" onblur="confirmPass()" required>
+                
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            </form>
+
+        </div> 
+    </body>
+    <script type="text/javascript">
+        function confirmPass() {
+            var pass = document.getElementById("pass").value
+            var confPass = document.getElementById("c_pass").value
+            if (pass !== confPass) {
+                alert('Wrong confirm password !');
+            }
+        }
+        function checkValidity() {
+            var user = document.getElementById("user").value
+            var users = document.getElementsByName("users").value
+            var i = 0
+            while(user === users[i]) {
+                i = i+1
+            }
+        }
+    </script>
+</html>

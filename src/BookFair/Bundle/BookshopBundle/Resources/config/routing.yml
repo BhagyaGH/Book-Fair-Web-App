@@ -1,0 +1,75 @@
+book_fair_bookshop_homepage:
+    path:     /hello
+    defaults: { _controller: BookFairBookshopBundle:Login:index }
+
+book_fair_login:
+    path: /login
+    defaults: { _controller: BookFairBookshopBundle:Login:index }
+    
+book_fair_login_validation:
+    path: /account
+    defaults: { _controller: BookFairBookshopBundle:Login:login } 
+    requirements: { _method: POST }
+
+book_fair_register_key:
+    path: /entervalidationkey
+    defaults: { _controller: BookFairBookshopBundle:Register:keyEnter }     
+    
+book_fair_register_key_check:
+    path: /validationkey
+    defaults: { _controller: BookFairBookshopBundle:Register:keyCheck }     
+    requirements: { _method: POST }
+    
+book_fair_register_bookshopacc:
+    path: /registerBookshopAccount
+    defaults: { _controller: BookFairBookshopBundle:Register:registerBookshopAcc }  
+    requirements: { _method: POST }
+    
+book_fair_register_adminacc:
+    path: /registerAdminAccount
+    defaults: { _controller: BookFairBookshopBundle:Register:registerAdminAcc }
+    requirements: { _method: POST }
+    
+bookshop_account:
+    path: /bookshop/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:index }
+    
+bookshop_account_prof:
+    path: /bookshopProfile/{id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:profile }
+    
+bookshop_book_add:
+    path: /addNewBook/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:Book:addBook }
+    
+bookshop_book_available:
+    path: /availableBooks/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:availableBooks }
+    
+bookshop_book_notavailable:
+    path: /notAvailableBooks/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:notAvailableBooks }
+    
+bookshop_book_update:
+    path: /updateBooks/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:Book:index }
+
+bookshop_book_update2:
+    path: /update/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:updateBook }
+  
+bookshop_book_update3:
+    path: /insert/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:updateNewBook }
+    
+bookshop_add_discount:
+    path: /discount/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:BookshopAccount:addDiscount }
+    
+book_show:
+    path: /showbook/{bookshop_id}
+    defaults: { _controller: BookFairBookshopBundle:Book:showBook }
+    
+    
+    
+    

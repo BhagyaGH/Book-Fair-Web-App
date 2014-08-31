@@ -1,0 +1,4 @@
+book_fair_bookshop:
+    resource: "@BookFairBookshopBundle/Resources/config/routing.yml"
+    prefix:   /
+

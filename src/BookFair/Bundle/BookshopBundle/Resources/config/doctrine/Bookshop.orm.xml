@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BookFair\Bundle\BookshopBundle\Entity\Bookshop" table="bookshop">
+    <id name="bookshopId" type="integer" column="bookshop_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bookshopName" type="string" column="bookshop_name" length="25" nullable="false"/>
+    <field name="stallNo" type="string" column="stall_no" length="3" nullable="true"/>
+    <field name="phone" type="string" column="phone" length="10" nullable="true"/>
+    <field name="address" type="string" column="address" length="20" nullable="true"/>
+    <many-to-many field="book" target-entity="Book" inversed-by="bookshop">
+      <join-table name="has">
+        <join-columns>
+          <join-column name="bookshop_id" referenced-column-name="bookshop_id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="book_id" referenced-column-name="book_id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

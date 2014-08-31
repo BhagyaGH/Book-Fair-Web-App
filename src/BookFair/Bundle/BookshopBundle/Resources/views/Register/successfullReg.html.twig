@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Enter Validation Key</title>
+
+        <link href="{{asset('bundles/bookfairbookshop/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/bookfairbookshop/css/signin.css')}}" rel="stylesheet">
+        <script src="{{asset('bundles/bookfairbookshop/js/ie-emulation-modes-warning.js')}}"></script>
+        <script src="{{asset('bundles/bookfairbookshop/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <form class="form-signin" role="form" action="{{path('bookshop_account', {'bookshop_id':bookshop_id})}}" method="POST">
+                <h3>Successfully Registered!</h3>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Go to Profile</button>
+            </form>
+
+        </div>
+                
+    </body>
+</html>

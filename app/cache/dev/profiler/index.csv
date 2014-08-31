@@ -1,0 +1,9 @@
+e1da55,::1,GET,http://localhost/BookFair/web/app_dev.php/,1409213138,
+b6afaa,::1,GET,http://localhost/BookFair/web/app_dev.php/,1409213246,
+c50ea6,::1,GET,http://localhost/BookFair/web/app_dev.php/login,1409213252,
+9083e4,::1,GET,http://localhost/BookFair/web/app_dev.php/account,1409213257,724817
+724817,::1,POST,http://localhost/BookFair/web/app_dev.php/account,1409213257,
+731860,::1,GET,http://localhost/BookFair/web/app_dev.php/,1409213307,
+58ec34,::1,GET,http://localhost/BookFair/web/app_dev.php/login,1409213311,
+95284f,::1,GET,http://localhost/BookFair/web/app_dev.php/account,1409213315,660c48
+660c48,::1,POST,http://localhost/BookFair/web/app_dev.php/account,1409213315,
