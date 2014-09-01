@@ -20,18 +20,14 @@ class BookController extends Controller {
     public function addBookAction(Request $request, $bookshop_id) {
         
         $book = new Book();
-        
         $form = $this->createForm(new BookType(), $book, array(
             'action' => $this->generateUrl('bookshop_book_add', array('bookshop_id' => $bookshop_id))
         ));
-        
         $form->handleRequest($request);
-        
         if($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($book);
             $em->flush();
-            
             return $this->render('BookFairBookshopBundle:Book:successfuladd.html.twig', array('bookshop_id' => $bookshop_id, 'isbn' => $book->getBookId(), 'bookTitle' => $book->getTitle()));
         }
         
