@@ -29,7 +29,8 @@ class BookshopAccountController extends Controller {
     }
 
     public function profileAction($bookshop_id) {
-        return $this->render('BookFairBookshopBundle:Bookshop:index.html.twig', array('bookshop_id' => $bookshop_id, 'books' => $books));
+        $bookshop = $this->getDoctrine()->getEntityManager()->getRepository('BookFairBookshopBundle:Bookshop')->findOneBy(array('bookshopId'=>$bookshop_id));
+        return $this->render('BookFairBookshopBundle:Bookshop:profile.html.twig', array('bookshop_id' => $bookshop_id, 'bookshop' => $bookshop));
     }
 
     private function listBooksAction($bookshop_id) {
