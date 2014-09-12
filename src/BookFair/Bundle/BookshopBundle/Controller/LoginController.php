@@ -41,9 +41,11 @@ class LoginController extends Controller {
                     $statement->bindValue('id', $id);
                     $statement->execute();
                     $result = $statement->fetchAll();
-                    if($result) {
+
+                    if ($result) {
                         $bookshop_id = $result[0]['bookshop_id'];
-                        return $this->render('BookFairBookshopBundle:Bookshop:index.html.twig', array('bookshop_id' => $bookshop_id));
+                        $bookshop = $em->getRepository('BookFairBookshopBundle:Bookshop')->findOneBy(array('bookshopId' => $bookshop_id));
+                        return $this->render('BookFairBookshopBundle:Bookshop:index.html.twig', array('bookshop_id' => $bookshop_id, 'bookshop' => $bookshop));
                     }
                 }
                 return $this->render('BookFairBookshopBundle:Login:error.html.twig', array('msg' => "Login Error!"));

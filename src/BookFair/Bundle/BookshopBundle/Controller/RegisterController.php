@@ -1,6 +1,7 @@
 <?php
 namespace BookFair\Bundle\BookshopBundle\Controller;
 
+use BookFair\Bundle\BookshopBundle\Entity\Manages;
 use BookFair\Bundle\BookshopBundle\Entity\UserAdmin;
 use BookFair\Bundle\BookshopBundle\Entity\UserBookshop;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -96,8 +97,12 @@ class RegisterController extends Controller {
             $em3 = $this->getDoctrine()->getEntityManager();
             $rep = $em3->getRepository('BookFairBookshopBundle:Bookshop');
             $bookshop = $rep->findOneBy(array('bookshopName' => $bookshopName));
-            $bookshop->addId($bookManager);
-            $em3->persist($bookshop);
+            
+            $manages = new Manages();
+            $manages->setId($bookManager);
+            $manages->setBookshop($bookshop);
+            
+            $em3->persist($manages);
             $em3->flush();
             
             return $this->render('BookFairBookshopBundle:Register:successfullReg.html.twig', array('bookshop_id' => $bookshop->getBookshopId(), 'id' => $bookManager->getId()));

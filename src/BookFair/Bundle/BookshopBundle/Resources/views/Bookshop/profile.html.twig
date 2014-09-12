@@ -40,14 +40,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="{{path('logout')}}">Logout</a></li>
+                        <li><a href="{{path('bookshop_about')}}">About</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
                 </div>
             </div>
         </div>
@@ -56,13 +51,13 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="{{path('bookshop_account', {'bookshop_id': bookshop_id})}}">Books</a></li>
+                        <li class="active"><a href="{{path('bookshop_account_books', {'bookshop_id': bookshop_id})}}">Books</a></li>
                         <li class="active"><a href="{{path('bookshop_account_prof', {'bookshop_id': bookshop_id})}}">Bookshop Profile</a></li>
                     </ul>
                     
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    {{bookshop.bookshop_name}}
+                    {{bookshop.bookshopName}}
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -74,7 +69,7 @@
                             <tbody>
                                 <tr>
                                     <td>Stall No:</td>
-                                    <td>{{bookshop.stall_no}}</td>
+                                    <td>{{bookshop.stallNo}}</td>
                                 </tr>
                                 <tr>
                                     <td>Address:</td>
@@ -88,7 +83,7 @@
                         </table>
                     </div>
                     <br>
-                    <a href="{{path('bookshop_book_update', {'bookshop_id': bookshop_id})}}">Add Book</a>
+                    <a href="{{path('bookshop_prof_update_stall', {'bookshop_id': bookshop_id})}}">Change Stall No</a>
                 </div>
             </div>
         </div>

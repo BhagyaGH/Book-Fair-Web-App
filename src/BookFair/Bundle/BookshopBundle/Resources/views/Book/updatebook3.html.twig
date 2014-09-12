@@ -40,14 +40,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="{{path('logout')}}">Logout</a></li>
+                        <li><a href="{{path('bookshop_about', {'bookshop_id': bookshop_id})}}">About</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
                 </div>
             </div>
         </div>
@@ -62,7 +57,7 @@
                     
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <form class="form-signin" role="form" action="{{path('bookshop_book_update3', {'bookshop_id': bookshop_id})}}" method="POST">
+                <form class="form-signin" role="form" action="{{path('bookshop_book_update3', {'bookshop_id': bookshop_id, 'book_id': book.bookId})}}" method="POST">
                     <h2>Not in the Bookshop Database!</h2>
                     <br>
                     <div class="table-responsive">
@@ -99,8 +94,6 @@
                         </table>
                     </div>
                     <br>
-                    
-                    <input type="hidden" name="isbn" value="{{book.isbn}}" class="form-control">
                     
                     Available :<br>
                         <input type="radio" name="newAvailable" value="1" required>Yes<br>
