@@ -59,3 +59,5 @@ e5ea45,::1,POST,http://localhost/BookFair/web/app_dev.php/AdminAccount/BookDetai
 08333b,::1,GET,http://localhost/BookFair/web/app_dev.php/dist/js/bootstrap.min.js,1411025421,
 c9a21c,::1,GET,http://localhost/BookFair/web/app_dev.php/assets/js/docs.min.js,1411025421,4d47d7
 4d47d7,::1,GET,http://localhost/BookFair/web/app_dev.php/assets/js/docs.min.js,1411025421,
+6fb24a,::1,GET,http://localhost/BookFair/web/app_dev.php/,1411025545,
+d4ac2b,::1,GET,http://localhost/BookFair/web/app_dev.php/,1411027937,
