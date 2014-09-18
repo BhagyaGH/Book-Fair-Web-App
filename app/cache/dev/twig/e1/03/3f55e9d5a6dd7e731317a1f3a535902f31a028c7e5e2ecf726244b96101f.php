@@ -23,7 +23,10 @@ class __TwigTemplate_e1033f55e9d5a6dd7e731317a1f3a535902f31a028c7e5e2ecf726244b9
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         
-        <link rel=\"icon\" href=\"../../favicon.ico\">
+        <link rel=\"icon\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bookfairbookshop/images/icon.ico"), "html", null, true);
+        echo "\">
 
         <title>Login</title>
 
@@ -62,17 +65,11 @@ class __TwigTemplate_e1033f55e9d5a6dd7e731317a1f3a535902f31a028c7e5e2ecf726244b9
                 Username <input type=\"text\" name=\"username\" class=\"form-control\" placeholder=\"Username\" required autofocus>
                 Password <input type=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Password\" required>
 
-                <div class=\"checkbox\">
-                    <label>
-                        <input type=\"checkbox\" value=\"remember-me\"> Remember me
-                    </label>
-                </div>
-
                 <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>
             </form>
 
             <form class=\"form-signin\" role=\"form\" action=\"";
-        // line 41
+        // line 35
         echo $this->env->getExtension('routing')->getPath("book_fair_register_key");
         echo "\" method=\"POST\">
                 <br><br>
@@ -98,6 +95,6 @@ class __TwigTemplate_e1033f55e9d5a6dd7e731317a1f3a535902f31a028c7e5e2ecf726244b9
 
     public function getDebugInfo()
     {
-        return array (  76 => 41,  55 => 23,  44 => 15,  40 => 14,  36 => 13,  32 => 12,  19 => 1,);
+        return array (  73 => 35,  58 => 23,  47 => 15,  43 => 14,  39 => 13,  35 => 12,  28 => 8,  19 => 1,);
     }
 }

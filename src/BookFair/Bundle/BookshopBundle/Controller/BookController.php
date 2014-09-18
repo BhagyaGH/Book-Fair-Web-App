@@ -37,8 +37,10 @@ class BookController extends Controller {
     
     private function listAllBooksAction() {
         
+        // Entity Manager to access the database
         $em = $this->getDoctrine()->getEntityManager();
         $connection = $em->getConnection();
+        // Statement to all the books in the database
         $statement = $connection->prepare("SELECT * FROM book ORDER BY title");
         $statement->execute();
         $results = $statement->fetchAll();
@@ -48,8 +50,11 @@ class BookController extends Controller {
     
     public function showBookAction(Request $request, $bookshop_id) {
         $book_id = $request->get('book_id');
+        
+        // Find the bookshop with the given bookshop_id in the bookshop table in the database
         $bookshop = $this->getDoctrine()->getManager()->getRepository(
                 'BookFairBookshopBundle:Bookshop')->findOneBy(array('bookshopId' => $bookshop_id));
+        
         $book = $this->getDoctrine()->getManager()->getRepository(
                 'BookFairBookshopBundle:Book')->findOneBy(array('bookId' => $book_id));
         

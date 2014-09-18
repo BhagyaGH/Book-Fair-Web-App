@@ -2,6 +2,8 @@
 
 namespace BookFair\Bundle\BookshopBundle\Controller;
 
+use BookFair\Bundle\BookshopBundle\Entity\Bookshop;
+use BookFair\Bundle\BookshopBundle\Form\Type\BookshopType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -105,5 +107,23 @@ class AdminAccountController extends Controller {
         
         return $this->render('BookFairBookshopBundle:Admin:validation.html.twig');
     }
+    
+    public function bookshopAddAction(Request $request) {
+        
+        $bookshop = new Bookshop();
+        $form = $this->createForm(new BookshopType(), $bookshop, array(
+            'action' => $this->generateUrl('admin_add_bookshop')));
+        $form->handleRequest($request);
+        if($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($bookshop);
+            $em->flush();
+            return $this->redirect($this->generateUrl('admin_bookshops'));
+        }
+        
+        return $this->render('BookFairBookshopBundle:Admin:addbookshop.html.twig', array('form' => $form->createView()));
+        
+    }
+    
     
 }

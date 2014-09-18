@@ -129,6 +129,10 @@ admin_add_key:
 admin_save_key:
     path: /AdminAccount/SaveKey/
     defaults: { _controller: BookFairBookshopBundle:AdminAccount:keySave }
+
+admin_add_bookshop:
+    path: /AdminAccount/AddBookshop/
+    defaults: { _controller: BookFairBookshopBundle:AdminAccount:bookshopAdd }
     
 logout:
     path: /
